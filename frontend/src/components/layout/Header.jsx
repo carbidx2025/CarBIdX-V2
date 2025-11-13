@@ -1,0 +1,1 @@
+export default function Header(){return (<header><h1>CarBidX</h1></header>);}
