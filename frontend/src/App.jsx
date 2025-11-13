@@ -1,4 +1,4 @@
-// App wrapper with router
+// Main App wrapper loading Router
 import React from 'react';
 import Router from './router.jsx';
 
