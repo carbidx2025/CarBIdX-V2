@@ -1,8 +1,1 @@
-/* Color variables */
-:root {
-  --primary-blue: #123a7d;
-  --gold: #d4a017;
-  --light-gray: #e8e8e8;
-  --danger-red: #d63031;
-  --success-green: #2ecc71;
-}
+:root { --primary: #1a3d7c; --accent: #d4af37; --text: #000; --bg: #fff; }
