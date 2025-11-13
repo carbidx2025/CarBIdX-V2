@@ -1,0 +1,21 @@
+@import "../styles/theme.css";
+
+.cbx-btn {
+  padding: 10px 18px;
+  background: var(--cbx-blue);
+  border: none;
+  color: var(--cbx-text-light);
+  border-radius: var(--cbx-radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.cbx-btn:hover {
+  background: var(--cbx-blue-light);
+}
+
+.cbx-btn:active {
+  background: var(--cbx-blue-dark);
+}
+
