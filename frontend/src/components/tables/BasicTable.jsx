@@ -1,0 +1,1 @@
+export default function BasicTable(){return (<table><tbody><tr><td>Table</td></tr></tbody></table>)}

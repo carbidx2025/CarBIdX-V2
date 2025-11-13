@@ -1,1 +1,1 @@
-export default function Footer(){return (<footer><p>© 2025 CarBidX</p></footer>);}
+export default function Footer(){return (<footer>Footer</footer>)}
