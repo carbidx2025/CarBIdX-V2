@@ -1,1 +1,105 @@
-/* layout */
+/* NAVBAR */
+.navbar {
+  background: #ffffff;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.nav-logo a {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0074ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  font-size: 15px;
+  color: #333;
+}
+
+.nav-links a:hover {
+  color: #0074ff;
+}
+
+/* FOOTER */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+  margin-top: 40px;
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.1);
+}
+
+/* HOME PAGE */
+.home-page {
+  text-align: center;
+}
+
+.home-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* AUCTION */
+.auction-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 480px;
+  margin: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.timer-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.bids-list {
+  margin-top: 15px;
+}
+
+.bid-row {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* CONFIRM PAGE */
+.confirm-box {
+  background: white;
+  max-width: 420px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.confirm-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* DEALER DASHBOARD */
+.dashboard-list {
+  max-width: 480px;
+  margin: auto;
+}
+
+.dashboard-item {
+  background: white;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}
