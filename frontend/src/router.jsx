@@ -1,23 +1,27 @@
 import { Routes, Route } from "react-router-dom";
 
-/* Pages */
-import Home from "./pages/home";
-import BuyerLogin from "./pages/buyer/buyerlogin";
-import BuyerRegister from "./pages/buyer/buyerregister";
-import BuyerVerify from "./pages/buyer/buyerverify";
-import BuyerRequest from "./pages/buyer/buyerrequest";
-import BuyerDashboard from "./pages/buyer/buyerdashboard";
-import BuyerAuctions from "./pages/buyer/buyerauctions";
-import BuyerAuctionDetail from "./pages/buyer/buyerauctiondetail";
-import BuyerConfirm from "./pages/buyer/buyerconfirm";
+/* Home */
+import Home from "./pages/home.jsx";
 
-import DealerLogin from "./pages/dealer/dealerlogin";
-import DealerDashboard from "./pages/dealer/dealerdashboard";
-import DealerCreateListing from "./pages/dealer/dealercreatelisting";
-import DealerMyListings from "./pages/dealer/dealermylistings";
+/* Buyer */
+import BuyerLogin from "./pages/Buyer/BuyerLogin.jsx";
+import BuyerRegister from "./pages/Buyer/BuyerRegister.jsx";
+import BuyerVerify from "./pages/Buyer/BuyerVerify.jsx";
+import BuyerRequest from "./pages/Buyer/BuyerRequest.jsx";
+import BuyerDashboard from "./pages/Buyer/BuyerDashboard.jsx";
+import BuyerAuctions from "./pages/Buyer/BuyerAuctions.jsx";
+import BuyerAuctionDetail from "./pages/Buyer/BuyerAuctionDetail.jsx";
+import BuyerConfirm from "./pages/Buyer/BuyerConfirm.jsx";
 
-import AdminLogin from "./pages/admin/adminlogin";
-import AdminDashboard from "./pages/admin/admindashboard";
+/* Dealer */
+import DealerLogin from "./pages/Dealer/DealerLogin.jsx";
+import DealerDashboard from "./pages/Dealer/DealerDashboard.jsx";
+import DealerCreateListing from "./pages/Dealer/DealerCreateListing.jsx";
+import DealerMyListings from "./pages/Dealer/DealerMyListings.jsx";
+
+/* Admin */
+import AdminLogin from "./pages/Admin/AdminLogin.jsx";
+import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 
 export default function AppRouter() {
   return (
@@ -45,6 +49,7 @@ export default function AppRouter() {
       {/* Admin */}
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
+
     </Routes>
   );
 }
