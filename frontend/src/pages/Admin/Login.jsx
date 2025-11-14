@@ -3,8 +3,8 @@ import { useAuth } from "../../hooks/useAuth";
 import Input from "../../components/forms/Input";
 import Button from "../../components/ui/Button";
 
-const AdminLogin = () => {
-  const { adminLogin, loading, error } = useAuth();
+export default function AdminLogin() {
+  const { login, loading, error } = useAuth();
   const [form, setForm] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
@@ -14,26 +14,28 @@ const AdminLogin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await adminLogin(form.email, form.password);
+    await login(form.email, form.password, "admin"); // admin role
   };
 
   return (
-    <main className="page auth-page">
-      <section className="auth-card">
-        <h1>Admin console</h1>
-        <p className="auth-subtitle">
-          Restricted access. Activity is logged and monitored.
+    <main className="min-h-screen w-full bg-[#0a0f24] flex items-center justify-center px-4 py-10">
+      <section className="w-full max-w-md bg-[#11172f] border border-[#1a2240] rounded-xl shadow-xl p-8 text-white">
+
+        <h1 className="text-3xl font-bold mb-3 text-center">Admin Login</h1>
+        <p className="text-gray-300 text-center mb-8">
+          Secure access for CarBidX platform administrators.
         </p>
 
-        <form onSubmit={handleSubmit} className="auth-form">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <Input
-            label="Admin email"
+            label="Email"
             name="email"
             type="email"
             value={form.email}
             onChange={handleChange}
             required
           />
+
           <Input
             label="Password"
             name="password"
@@ -43,15 +45,19 @@ const AdminLogin = () => {
             required
           />
 
-          {error && <p className="auth-error">{error}</p>}
+          {error && (
+            <p className="text-red-400 text-sm text-center -mt-3">{error}</p>
+          )}
 
-          <Button type="submit" disabled={loading}>
-            {loading ? "Checking access..." : "Enter console"}
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-[#D5B628] hover:bg-[#B69C20] text-black font-semibold py-3 rounded-lg transition"
+          >
+            {loading ? "Signing in..." : "Sign In"}
           </Button>
         </form>
       </section>
     </main>
   );
-};
-
-export default AdminLogin;
+}
