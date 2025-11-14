@@ -4,14 +4,13 @@ import Button from "../../components/ui/Button";
 
 export default function BuyerVerify() {
   const [code, setCode] = useState("");
-  const [status, setStatus] = useState("idle"); // idle | verifying | success | error
+  const [status, setStatus] = useState("idle");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("verifying");
 
     try {
-      // TODO: connect actual backend endpoint
       await new Promise((res) => setTimeout(res, 1200));
 
       setStatus("success");
@@ -52,7 +51,7 @@ export default function BuyerVerify() {
           <Button
             type="submit"
             disabled={status === "verifying"}
-            className="w-full bg-[#E8C225] hover:bg-[#C9A71E] text-black font-semibold py-3 rounded-lg transition"
+            className="w-full bg-[#D5B628] hover:bg-[#B69C20] text-black font-semibold py-3 rounded-lg transition"
           >
             {status === "verifying" ? "Verifying..." : "Verify Code"}
           </Button>
@@ -62,7 +61,7 @@ export default function BuyerVerify() {
           Didn’t receive a code?{" "}
           <a
             href="/buyer/verify/resend"
-            className="text-[#E8C225] hover:text-[#C9A71E] font-medium"
+            className="text-[#D5B628] hover:text-[#B69C20] font-medium"
           >
             Resend
           </a>
