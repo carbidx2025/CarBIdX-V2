@@ -1,17 +1,16 @@
 import { Routes, Route } from "react-router-dom";
-
-function HomePage() {
-  return (
-    <div className="flex items-center justify-center h-screen">
-      <h1 className="text-3xl font-bold">CBX2 Frontend Active</h1>
-    </div>
-  );
-}
+import Home from "./pages/Home";
 
 function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      {/* Homepage */}
+      <Route path="/" element={<Home />} />
+
+      {/* Placeholder pages (will replace later) */}
+      <Route path="/login" element={<div className="p-10">Login Page</div>} />
+      <Route path="/register" element={<div className="p-10">Register Page</div>} />
+      <Route path="*" element={<div className="p-10">Page Not Found</div>} />
     </Routes>
   );
 }
