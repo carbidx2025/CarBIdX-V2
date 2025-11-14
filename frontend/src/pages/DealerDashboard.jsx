@@ -1,1 +1,1 @@
-export default function DealerDashboard(){ return <div>Dealer Dashboard</div>; }
+export default function DealerDashboard(){return <h1>DealerDashboard</h1>}

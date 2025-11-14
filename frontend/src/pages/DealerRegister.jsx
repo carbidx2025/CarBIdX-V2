@@ -1,1 +1,1 @@
-export default function DealerRegister(){ return <div>Dealer Register</div>; }
+export default function DealerRegister(){return <h1>DealerRegister</h1>}

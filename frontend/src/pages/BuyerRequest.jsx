@@ -1,1 +1,1 @@
-export default function BuyerRequest(){ return <div>Buyer Request</div>; }
+export default function BuyerRequest(){return <h1>BuyerRequest</h1>}

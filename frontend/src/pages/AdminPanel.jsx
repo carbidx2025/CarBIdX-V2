@@ -1,1 +1,1 @@
-export default function AdminPanel(){ return <div>Admin Panel</div>; }
+export default function AdminPanel(){return <h1>AdminPanel</h1>}

@@ -1,1 +1,1 @@
-export default function AuctionLive(){ return <div>Auction Live</div>; }
+export default function AuctionLive(){return <h1>AuctionLive</h1>}

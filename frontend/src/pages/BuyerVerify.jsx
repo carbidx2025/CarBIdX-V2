@@ -1,1 +1,1 @@
-export default function BuyerVerify(){ return <div>Buyer Verify</div>; }
+export default function BuyerVerify(){return <h1>BuyerVerify</h1>}
