@@ -1,4 +1,4 @@
-// Vite config for React + JSX
+---BEGIN CODE---
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -7,7 +7,10 @@ export default defineConfig({
   server: {
     port: 5173
   },
+  base: '',
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    emptyOutDir: true
   }
 });
+---END CODE---
