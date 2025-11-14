@@ -52,7 +52,7 @@ export default function BuyerLogin() {
           <Button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#E8C225] hover:bg-[#C9A71E] text-black font-semibold py-3 rounded-lg transition"
+            className="w-full bg-[#D5B628] hover:bg-[#B69C20] text-black font-semibold py-3 rounded-lg transition"
           >
             {loading ? "Signing in..." : "Sign In"}
           </Button>
@@ -62,7 +62,7 @@ export default function BuyerLogin() {
           Don't have a buyer account?{" "}
           <a
             href="/buyer/register"
-            className="text-[#E8C225] hover:text-[#C9A71E] font-medium"
+            className="text-[#D5B628] hover:text-[#B69C20] font-medium"
           >
             Register
           </a>
