@@ -17,25 +17,25 @@ function Navbar() {
 
         {/* Right: Navigation */}
         <div className="flex items-center gap-8 text-sm font-medium text-white">
-          <Link to="/how-it-works" className="hover:text-[#FAD80D] transition">
+          <Link to="/how-it-works" className="hover:text-[#D5B628] transition">
             How It Works
           </Link>
 
-          <Link to="/buyers" className="hover:text-[#FAD80D] transition">
+          <Link to="/buyers" className="hover:text-[#D5B628] transition">
             Buyers
           </Link>
 
-          <Link to="/dealers" className="hover:text-[#FAD80D] transition">
+          <Link to="/dealers" className="hover:text-[#D5B628] transition">
             Dealers
           </Link>
 
-          <Link to="/contact" className="hover:text-[#FAD80D] transition">
+          <Link to="/contact" className="hover:text-[#D5B628] transition">
             Contact Us
           </Link>
 
           <Link
             to="/login"
-            className="bg-[#FAD80D] text-[#0a0f24] px-4 py-2 rounded-md font-semibold hover:bg-[#e0c00c] transition"
+            className="bg-[#D5B628] text-[#0a0f24] px-4 py-2 rounded-md font-semibold hover:bg-[#B69C20] transition"
           >
             Sign In
           </Link>
