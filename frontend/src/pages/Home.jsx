@@ -17,14 +17,14 @@ function Home() {
 
         {/* Buyer Button */}
         <button
-          className="bg-[#E8C225] hover:bg-[#C9A71E] text-black font-semibold px-8 py-3 rounded-lg text-lg transition"
+          className="bg-[#D5B628] hover:bg-[#B69C20] text-black font-semibold px-8 py-3 rounded-lg text-lg transition"
         >
           Register as Buyer
         </button>
 
         {/* Dealer Button */}
         <button
-          className="border border-[#E8C225] text-[#E8C225] hover:bg-[#E8C225] hover:text-black font-semibold px-8 py-3 rounded-lg text-lg transition"
+          className="border border-[#D5B628] text-[#D5B628] hover:bg-[#D5B628] hover:text-black font-semibold px-8 py-3 rounded-lg text-lg transition"
         >
           Register as Dealer
         </button>
