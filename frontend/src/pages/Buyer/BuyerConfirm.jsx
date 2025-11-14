@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import Button from "../../components/ui/Button";
 
 export default function BuyerConfirm() {
-  const [status, setStatus] = useState("waiting"); 
-  // waiting | sending | confirmed | error
+  const [status, setStatus] = useState("waiting");
 
   const handleConfirm = async () => {
     setStatus("sending");
 
     try {
-      // TODO: connect to backend confirm endpoint
       await new Promise((res) => setTimeout(res, 1200));
 
       setStatus("confirmed");
@@ -24,9 +22,8 @@ export default function BuyerConfirm() {
 
   return (
     <main className="min-h-screen w-full bg-[#0a0f24] flex items-center justify-center px-4 py-10">
-      
       <section className="w-full max-w-lg bg-[#11172f] border border-[#1a2240] rounded-xl shadow-xl p-10 text-white">
-        
+
         <h1 className="text-3xl font-bold mb-4 text-center">
           Confirm Your Winning Dealer
         </h1>
@@ -36,12 +33,13 @@ export default function BuyerConfirm() {
           Your deposit hold will be released immediately after confirmation.
         </p>
 
-        {/* Confirmation Card */}
         <div className="bg-[#0f142b] border border-[#1f2947] rounded-lg p-6 mb-8">
-          <p className="text-lg font-semibold mb-1">Winning Dealer</p>
-          <p className="text-gray-300">This will display real dealer info after backend connects.</p>
+          <p className="text-lg font-semibold mb-1 text-white">Winning Dealer</p>
+          <p className="text-gray-300">
+            This will display real dealer info after backend connects.
+          </p>
 
-          <p className="text-lg font-semibold mt-4 mb-1">Winning Bid</p>
+          <p className="text-lg font-semibold mt-4 mb-1 text-white">Winning Bid</p>
           <p className="text-gray-300">$XX,XXX — dynamic after backend.</p>
         </div>
 
@@ -52,7 +50,7 @@ export default function BuyerConfirm() {
         )}
 
         <Button
-          className="w-full bg-[#E8C225] hover:bg-[#C9A71E] text-black font-semibold py-3 rounded-lg transition"
+          className="w-full bg-[#D5B628] hover:bg-[#B69C20] text-black font-semibold py-3 rounded-lg transition"
           disabled={status === "sending"}
           onClick={handleConfirm}
         >
@@ -60,7 +58,7 @@ export default function BuyerConfirm() {
         </Button>
 
         {status === "confirmed" && (
-          <p className="text-[#E8C225] text-center mt-6 font-medium">
+          <p className="text-[#D5B628] text-center mt-6 font-medium">
             Confirmed. Redirecting…
           </p>
         )}
