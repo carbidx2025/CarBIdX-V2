@@ -1,25 +1,16 @@
+// ---BEGIN CODE---
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
-  const { saveAdminToken } = useAuth();
+  const { saveAdminTempToken } = useAuth();
 
-  const [form, setForm] = useState({
-    username: "",
-    password: ""
-  });
-
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
-  function handleChange(e) {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
-  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -30,7 +21,7 @@ export default function AdminLogin() {
       const res = await fetch("https://your-backend-url.com/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form)
+        body: JSON.stringify({ username, password })
       });
 
       if (!res.ok) {
@@ -41,14 +32,14 @@ export default function AdminLogin() {
 
       const data = await res.json();
 
-      // Step 1: save temporary admin session token
-      saveAdminToken(data.tempToken);
+      // Save temporary admin session token for MFA
+      saveAdminTempToken(data.tempToken);
 
-      // Step 2: start MFA flow
+      // Redirect to MFA page
       navigate("/admin/mfa");
 
     } catch (err) {
-      setError("Network error. Try again.");
+      setError("Network error, try again.");
       setLoading(false);
     }
   }
@@ -62,37 +53,30 @@ export default function AdminLogin() {
 
         <form onSubmit={handleSubmit} className="admin-login-form">
 
-          <label className="admin-login-label">Username</label>
           <input
-            className="admin-login-input"
             type="text"
-            name="username"
-            value={form.username}
-            onChange={handleChange}
-            placeholder="Enter username"
-            required
-          />
-
-          <label className="admin-login-label">Password</label>
-          <input
+            placeholder="Username"
             className="admin-login-input"
-            type="password"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-            placeholder="Enter password"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
             required
           />
 
-          <button
-            type="submit"
-            className="admin-login-button"
-            disabled={loading}
-          >
-            {loading ? "Authenticating..." : "Sign In"}
+          <input
+            type="password"
+            placeholder="Password"
+            className="admin-login-input"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+          />
+
+          <button className="admin-login-button" disabled={loading}>
+            {loading ? "Authenticating…" : "Sign In"}
           </button>
         </form>
       </div>
     </div>
   );
 }
+// ---END CODE---
