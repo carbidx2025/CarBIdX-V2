@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/buyer-sidebar.css";
 
-export default function BuyerSidebar() {
+export default function buyersidebar() {
   return (
     <aside className="buyer-sidebar">
       <h2 className="buyer-sidebar-title">Buyer Menu</h2>
