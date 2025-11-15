@@ -1,89 +1,88 @@
----BEGIN CODE---
-// frontend/src/hooks/useAuth.js
+// ---BEGIN CODE---
+import { useState, useEffect } from "react";
 
-import { useState } from "react";
+export default function useAuth() {
 
-export function useAuth() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  // BUYER TOKEN
+  const [buyerToken, setBuyerToken] = useState(
+    localStorage.getItem("buyerToken") || null
+  );
 
-  async function login(email, password) {
-    setLoading(true);
-    setError("");
+  // DEALER TOKEN
+  const [dealerToken, setDealerToken] = useState(
+    localStorage.getItem("dealerToken") || null
+  );
 
-    try {
-      // Temporary mock logic so UI works
-      await new Promise((res) => setTimeout(res, 700));
+  // ADMIN TEMP TOKEN (for MFA step)
+  const [adminTempToken, setAdminTempToken] = useState(
+    localStorage.getItem("adminTempToken") || null
+  );
 
-      if (!email || !password) {
-        throw new Error("Missing email or password");
-      }
+  // FINAL ADMIN TOKEN (after MFA)
+  const [adminToken, setAdminToken] = useState(
+    localStorage.getItem("adminToken") || null
+  );
 
-      // Simulate success
-      localStorage.setItem("cbx_user_role", "buyer");
-      return true;
-
-    } catch (err) {
-      setError("Invalid credentials");
-      return false;
-
-    } finally {
-      setLoading(false);
-    }
+  // BUYER TOKEN SAVE
+  function saveBuyerToken(token) {
+    localStorage.setItem("buyerToken", token);
+    setBuyerToken(token);
   }
 
-  async function dealerLogin(email, password) {
-    setLoading(true);
-    setError("");
-
-    try {
-      await new Promise((res) => setTimeout(res, 700));
-
-      if (!email || !password) {
-        throw new Error("Missing email or password");
-      }
-
-      localStorage.setItem("cbx_user_role", "dealer");
-      return true;
-
-    } catch (err) {
-      setError("Invalid dealer credentials");
-      return false;
-
-    } finally {
-      setLoading(false);
-    }
+  // DEALER TOKEN SAVE
+  function saveDealerToken(token) {
+    localStorage.setItem("dealerToken", token);
+    setDealerToken(token);
   }
 
-  async function adminLogin(email, password) {
-    setLoading(true);
-    setError("");
+  // ADMIN TEMP TOKEN SAVE
+  function saveAdminTempToken(token) {
+    localStorage.setItem("adminTempToken", token);
+    setAdminTempToken(token);
+  }
 
-    try {
-      await new Promise((res) => setTimeout(res, 700));
+  // ADMIN FINAL TOKEN SAVE
+  function saveAdminToken(token) {
+    localStorage.setItem("adminToken", token);
+    setAdminToken(token);
 
-      if (!email || !password) {
-        throw new Error("Missing email or password");
-      }
+    // once final token is set, remove temp token
+    localStorage.removeItem("adminTempToken");
+    setAdminTempToken(null);
+  }
 
-      localStorage.setItem("cbx_user_role", "admin");
-      return true;
+  // UNIVERSAL LOGOUT CONTROLLER
+  function logout(role) {
+    if (role === "buyer") {
+      localStorage.removeItem("buyerToken");
+      setBuyerToken(null);
+    }
 
-    } catch (err) {
-      setError("Invalid admin credentials");
-      return false;
+    if (role === "dealer") {
+      localStorage.removeItem("dealerToken");
+      setDealerToken(null);
+    }
 
-    } finally {
-      setLoading(false);
+    if (role === "admin") {
+      localStorage.removeItem("adminToken");
+      localStorage.removeItem("adminTempToken");
+      setAdminToken(null);
+      setAdminTempToken(null);
     }
   }
 
   return {
-    login,
-    dealerLogin,
-    adminLogin,
-    loading,
-    error,
+    buyerToken,
+    dealerToken,
+    adminTempToken,
+    adminToken,
+
+    saveBuyerToken,
+    saveDealerToken,
+    saveAdminTempToken,
+    saveAdminToken,
+
+    logout
   };
 }
----END CODE---
+// ---END CODE---
