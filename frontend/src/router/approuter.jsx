@@ -6,7 +6,7 @@ import BuyerLayout from "../layouts/buyerlayout";
 import DealerLayout from "../layouts/dealerlayout";
 import AdminLayout from "../layouts/adminlayout";
 
-/* local home component */
+/* home */
 const Home = () => (
   <div style={{ color: "white", padding: "40px" }}>
     <h1>carbidx</h1>
@@ -29,7 +29,6 @@ import BuyerRequest from "../pages/buyer/buyerrequests";
 /* dealer pages */
 import DealerDashboard from "../pages/dealer/dealerdashboard";
 import DealerRequests from "../pages/dealer/dealerrequests";
-import DealerBids from "../pages/dealer/dealerbid";
 import DealerResults from "../pages/dealer/dealerresults";
 import DealerProfile from "../pages/dealer/dealerprofile";
 import DealerLogin from "../pages/dealer/dealerlogin";
@@ -74,7 +73,6 @@ export default function AppRouter() {
       <Route element={<DealerLayout />}>
         <Route path="/dealer/dashboard" element={<DealerDashboard />} />
         <Route path="/dealer/requests" element={<DealerRequests />} />
-        <Route path="/dealer/bids" element={<DealerBids />} />
         <Route path="/dealer/results" element={<DealerResults />} />
         <Route path="/dealer/profile" element={<DealerProfile />} />
         <Route path="/dealer/bid/:id" element={<DealerBid />} />
