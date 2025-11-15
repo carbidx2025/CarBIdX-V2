@@ -1,92 +1,73 @@
-// PATH: frontend/src/pages/Dealer/dealerdashboard.jsx
-
+// ---BEGIN CODE---
 import React from "react";
 import "../../styles/dealerdashboard.css";
-import DealerSidebar from "../../components/Dealer/dealersidebar";
 
 export default function DealerDashboard() {
   return (
-    <div className="dealer-dashboard-container">
+    <div className="dealer-dash-container">
 
-      {/* SIDEBAR */}
-      <DealerSidebar />
+      {/* PAGE TITLE */}
+      <h1 className="dealer-dash-title">Dealer Dashboard</h1>
 
-      {/* MAIN CONTENT */}
-      <div className="dealer-dashboard-main">
+      {/* TOP METRIC CARDS */}
+      <div className="dealer-dash-cards">
 
-        {/* HEADER */}
-        <div className="dealer-dashboard-header">
-          <h1>Dealer Dashboard</h1>
-          <p>Respond to buyer requests and monitor market activity.</p>
+        <div className="dealer-dash-card">
+          <h3 className="dealer-dash-card-title">Live Requests</h3>
+          <p className="dealer-dash-card-value">0</p>
         </div>
 
-        {/* STATS ROW */}
-        <div className="dealer-stats-row">
-
-          <div className="dealer-stat-card">
-            <span className="dealer-stat-label">Live Buyer Requests</span>
-            <span className="dealer-stat-value">0</span>
-          </div>
-
-          <div className="dealer-stat-card">
-            <span className="dealer-stat-label">Offers Submitted</span>
-            <span className="dealer-stat-value">0</span>
-          </div>
-
-          <div className="dealer-stat-card">
-            <span className="dealer-stat-label">Deals Won</span>
-            <span className="dealer-stat-value">0</span>
-          </div>
-
+        <div className="dealer-dash-card">
+          <h3 className="dealer-dash-card-title">Active Bids</h3>
+          <p className="dealer-dash-card-value">0</p>
         </div>
 
-        {/* DEALER INSIGHTS PANEL */}
-        <div className="dealer-insights-panel">
-
-          <h2 className="dealer-insights-title">Dealer Insights</h2>
-
-          <div className="dealer-insights-grid">
-
-            <div className="insight-box">
-              <h3 className="insight-label">Top Buyer Demand</h3>
-              <ul className="insight-list">
-                <li>Toyota Camry: 0 requests</li>
-                <li>Honda Civic: 0 requests</li>
-                <li>Tesla Model 3: 0 requests</li>
-              </ul>
-            </div>
-
-            <div className="insight-box">
-              <h3 className="insight-label">Average Winning Margin</h3>
-              <p className="insight-value">$0</p>
-            </div>
-
-            <div className="insight-box">
-              <h3 className="insight-label">Hot ZIP Codes</h3>
-              <ul className="insight-list">
-                <li>No active ZIP data</li>
-              </ul>
-            </div>
-
-            <div className="insight-box">
-              <h3 className="insight-label">Your Performance</h3>
-              <ul className="insight-list">
-                <li>Bids Submitted: 0</li>
-                <li>Avg Response Time: 0 min</li>
-                <li>Win Rate: 0%</li>
-              </ul>
-            </div>
-
-          </div>
+        <div className="dealer-dash-card">
+          <h3 className="dealer-dash-card-title">Won Auctions</h3>
+          <p className="dealer-dash-card-value">0</p>
         </div>
 
-        {/* LIVE REQUESTS SECTION */}
-        <div className="dealer-live-requests">
-          <h2>Live Buyer Requests</h2>
-          <p>No active buyer requests.</p>
+        <div className="dealer-dash-card">
+          <h3 className="dealer-dash-card-title">Payouts Pending</h3>
+          <p className="dealer-dash-card-value">$0</p>
         </div>
 
       </div>
+
+      {/* SHORTCUT ACTIONS */}
+      <div className="dealer-dash-actions">
+        <a href="/dealer/requests" className="dealer-dash-button">
+          View Live Buyer Requests
+        </a>
+
+        <a href="/dealer/bids" className="dealer-dash-button">
+          View My Bids
+        </a>
+
+        <a href="/dealer/results" className="dealer-dash-button">
+          Auction Results
+        </a>
+      </div>
+
+      {/* LIVE REQUESTS PREVIEW */}
+      <div className="dealer-dash-section">
+        <h2 className="dealer-dash-section-title">Live Buyer Requests</h2>
+
+        <div className="dealer-dash-empty">
+          No live requests available.
+        </div>
+      </div>
+
+      {/* RECENT ACTIVITY */}
+      <div className="dealer-dash-section">
+        <h2 className="dealer-dash-section-title">Recent Bidding Activity</h2>
+
+        <div className="dealer-dash-empty">
+          No recent activity.
+        </div>
+      </div>
+
     </div>
   );
 }
+// ---END CODE---
