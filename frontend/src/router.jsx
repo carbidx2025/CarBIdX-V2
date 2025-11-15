@@ -1,27 +1,27 @@
 import { Routes, Route } from "react-router-dom";
 
-/* Home */
+/* Home (located in /pages/home.jsx) */
 import Home from "./pages/home.jsx";
 
-/* Buyer */
+/* Buyer pages */
 import BuyerLogin from "./pages/Buyer/BuyerLogin.jsx";
 import BuyerRegister from "./pages/Buyer/BuyerRegister.jsx";
 import BuyerVerify from "./pages/Buyer/BuyerVerify.jsx";
 import BuyerRequest from "./pages/Buyer/BuyerRequest.jsx";
-import BuyerDashboard from "./pages/Buyer/BuyerDashboard.jsx";
-import BuyerAuctions from "./pages/Buyer/BuyerAuctions.jsx";
-import BuyerAuctionDetail from "./pages/Buyer/BuyerAuctionDetail.jsx";
+import BuyerDashboard from "./pages/Buyer/Dashboard.jsx";
+import BuyerAuctions from "./pages/Buyer/Auctions.jsx";
+import BuyerAuctionDetail from "./pages/Buyer/AuctionDetail.jsx";
 import BuyerConfirm from "./pages/Buyer/BuyerConfirm.jsx";
 
-/* Dealer */
+/* Dealer pages */
 import DealerLogin from "./pages/Dealer/DealerLogin.jsx";
 import DealerDashboard from "./pages/Dealer/DealerDashboard.jsx";
-import DealerCreateListing from "./pages/Dealer/DealerCreateListing.jsx";
-import DealerMyListings from "./pages/Dealer/DealerMyListings.jsx";
+import DealerCreateListing from "./pages/Dealer/CreateListing.jsx";
+import DealerMyListings from "./pages/Dealer/MyListings.jsx";
 
-/* Admin */
-import AdminLogin from "./pages/Admin/AdminLogin.jsx";
-import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
+/* Admin pages */
+import AdminLogin from "./pages/Admin/Login.jsx";
+import AdminDashboard from "./pages/Admin/Dashboard.jsx";
 
 export default function AppRouter() {
   return (
@@ -49,7 +49,6 @@ export default function AppRouter() {
       {/* Admin */}
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
-
     </Routes>
   );
 }
