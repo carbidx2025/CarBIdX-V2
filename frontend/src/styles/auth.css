@@ -1,0 +1,97 @@
+/* ---BEGIN CODE--- */
+
+/* GLOBAL AUTH CONTAINER */
+.auth-container,
+.dealer-login-container,
+.admin-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0d1333;
+  padding: 25px;
+}
+
+/* AUTH BOX */
+.auth-form,
+.dealer-login-box,
+.admin-login-box {
+  width: 380px;
+  background-color: #111a4b;
+  border: 1px solid #1e2a63;
+  padding: 30px;
+  border-radius: 8px;
+  color: white;
+}
+
+/* TITLES */
+.auth-title,
+.dealer-login-title,
+.admin-login-title {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e8c225;
+}
+
+/* INPUT FIELDS */
+.auth-input,
+.dealer-login-input,
+.admin-login-input {
+  width: 100%;
+  background-color: #0b143a;
+  border: 1px solid #2b3870;
+  padding: 12px;
+  border-radius: 6px;
+  color: white;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.auth-input:focus,
+.dealer-login-input:focus,
+.admin-login-input:focus {
+  border-color: #e8c225;
+  outline: none;
+}
+
+/* ERROR MESSAGES */
+.auth-error,
+.dealer-login-error,
+.admin-login-error {
+  color: #ff5757;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* BUTTONS */
+.auth-button,
+.dealer-login-button,
+.admin-login-button {
+  width: 100%;
+  background-color: #e8c225;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0d1333;
+  cursor: pointer;
+}
+
+.auth-button:hover,
+.dealer-login-button:hover,
+.admin-login-button:hover {
+  background-color: #cdaa1d;
+}
+
+.auth-button:disabled,
+.dealer-login-button:disabled,
+.admin-login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---END CODE--- */
