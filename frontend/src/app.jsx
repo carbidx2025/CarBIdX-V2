@@ -1,5 +1,5 @@
-import Navbar from "./components/Navbar";
-import AppRouter from "./router/AppRouter.jsx";
+import Navbar from "./components/navbar";
+import AppRouter from "./router/approuter.jsx";
 
 function App() {
   return (
