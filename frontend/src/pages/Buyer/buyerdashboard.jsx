@@ -1,48 +1,73 @@
-// PATH: frontend/src/pages/Buyer/buyerdashboard.jsx
-
+// ---BEGIN CODE---
 import React from "react";
 import "../../styles/buyerdashboard.css";
 
 export default function BuyerDashboard() {
   return (
-    <div className="dashboard-container">
+    <div className="buyer-dash-container">
 
-      {/* HEADER */}
-      <div className="dashboard-header">
-        <h1>Buyer Dashboard</h1>
-        <p>Manage your car requests and offers.</p>
-      </div>
+      {/* PAGE TITLE */}
+      <h1 className="buyer-dash-title">Buyer Dashboard</h1>
 
-      {/* STATS */}
-      <div className="dashboard-stats">
+      {/* TOP SUMMARY CARDS */}
+      <div className="buyer-dash-cards">
 
-        <div className="stat-card">
-          <span className="stat-label">Active Requests</span>
-          <span className="stat-value">0</span>
+        <div className="buyer-dash-card">
+          <h3 className="buyer-dash-card-title">Active Requests</h3>
+          <p className="buyer-dash-card-value">0</p>
         </div>
 
-        <div className="stat-card">
-          <span className="stat-label">Total Offers</span>
-          <span className="stat-value">0</span>
+        <div className="buyer-dash-card">
+          <h3 className="buyer-dash-card-title">Live Auctions</h3>
+          <p className="buyer-dash-card-value">0</p>
         </div>
 
-        <div className="stat-card">
-          <span className="stat-label">Completed</span>
-          <span className="stat-value">0</span>
+        <div className="buyer-dash-card">
+          <h3 className="buyer-dash-card-title">Pending Confirmations</h3>
+          <p className="buyer-dash-card-value">0</p>
+        </div>
+
+        <div className="buyer-dash-card">
+          <h3 className="buyer-dash-card-title">Deposit Status</h3>
+          <p className="buyer-dash-card-value">No Holds</p>
+        </div>
+
+      </div>
+
+      {/* ACTION SHORTCUTS */}
+      <div className="buyer-dash-actions">
+        <a href="/buyer/request" className="buyer-dash-button">
+          Create New Request
+        </a>
+
+        <a href="/buyer/requests" className="buyer-dash-button">
+          View My Requests
+        </a>
+
+        <a href="/buyer/auctions" className="buyer-dash-button">
+          View My Auctions
+        </a>
+      </div>
+
+      {/* UPCOMING OR ACTIVE AUCTIONS SECTION */}
+      <div className="buyer-dash-section">
+        <h2 className="buyer-dash-section-title">Active Auctions</h2>
+
+        <div className="buyer-dash-empty">
+          No active auctions.
         </div>
       </div>
 
-      {/* ACTION BUTTON */}
-      <div className="dashboard-actions">
-        <button className="primary-btn">Create New Car Request</button>
-      </div>
+      {/* RECENT ACTIVITY */}
+      <div className="buyer-dash-section">
+        <h2 className="buyer-dash-section-title">Recent Activity</h2>
 
-      {/* RECENT REQUESTS */}
-      <div className="recent-requests">
-        <h2>Your Requests</h2>
-        <p>You have no active requests.</p>
+        <div className="buyer-dash-empty">
+          No recent activity.
+        </div>
       </div>
 
     </div>
   );
 }
+// ---END CODE---
