@@ -1,0 +1,79 @@
+.buyer-auctions-container {
+  padding: 30px;
+  background-color: #0a144a; /* CarBidX deep blue */
+  min-height: 100vh;
+  color: white;
+}
+
+.buyer-auctions-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #ffd84d; /* CarBidX gold */
+}
+
+.buyer-auctions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.buyer-auction-card {
+  background-color: #112063;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.buyer-auction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.buyer-auction-car {
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+}
+
+.buyer-auction-status {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.buyer-auction-status.active {
+  background-color: #1ecb4f;
+}
+
+.buyer-auction-status.completed {
+  background-color: #4c4c4c;
+}
+
+.buyer-auction-details p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #d6d6d6;
+}
+
+.buyer-auction-btn {
+  margin-top: 15px;
+  width: 100%;
+  background-color: #ffd84d;
+  color: #0a144a;
+  font-weight: 700;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.buyer-auction-btn:hover {
+  background-color: #e1be43;
+}
