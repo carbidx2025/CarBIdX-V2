@@ -1,39 +1,43 @@
 .admin-layout {
   display: flex;
-  min-height: 100vh;
-  background-color: #050a24;
-  color: white;
+  height: 100vh;
+  width: 100%;
+  background-color: #0d1333;
 }
 
 .admin-sidebar {
-  width: 220px;
-  background-color: #04081b;
+  width: 240px;
+  background-color: #1c2b4a;
+  color: white;
   padding: 20px;
 }
 
 .admin-sidebar-title {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
-.admin-sidebar-nav {
+.admin-nav {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
 .admin-nav-item {
-  color: #ffd84d;
-  font-weight: 600;
+  color: #e8c225;
   text-decoration: none;
+  font-size: 16px;
 }
 
 .admin-nav-item:hover {
-  color: #e4c348;
+  color: #ffffff;
 }
 
 .admin-main {
   flex: 1;
-  padding: 30px;
+  padding: 25px;
+  overflow-y: auto;
+  background-color: #0d1333;
+  color: white;
 }
