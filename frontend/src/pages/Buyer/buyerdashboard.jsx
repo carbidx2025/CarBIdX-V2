@@ -1,20 +1,21 @@
-// BUYER DASHBOARD PAGE
 // PATH: frontend/src/pages/Buyer/buyerdashboard.jsx
 
 import React from "react";
-import "../../styles/dashboard.css";
+import "../../styles/buyerdashboard.css";
 
-function BuyerDashboard() {
+export default function BuyerDashboard() {
   return (
     <div className="dashboard-container">
+
       {/* HEADER */}
       <div className="dashboard-header">
         <h1>Buyer Dashboard</h1>
         <p>Manage your car requests and offers.</p>
       </div>
 
-      {/* STATS ROW */}
+      {/* STATS */}
       <div className="dashboard-stats">
+
         <div className="stat-card">
           <span className="stat-label">Active Requests</span>
           <span className="stat-value">0</span>
@@ -36,13 +37,12 @@ function BuyerDashboard() {
         <button className="primary-btn">Create New Car Request</button>
       </div>
 
-      {/* RECENT REQUESTS LIST */}
+      {/* RECENT REQUESTS */}
       <div className="recent-requests">
         <h2>Your Requests</h2>
         <p>You have no active requests.</p>
       </div>
+
     </div>
   );
 }
-
-export default BuyerDashboard;
