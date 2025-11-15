@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AdminApproveDealers() {
+export default function adminapprovedealers() {
   return (
     <div style={{ padding: "30px", color: "white" }}>
       <h1>Dealer Approvals</h1>
