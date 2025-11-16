@@ -1,69 +1,56 @@
-// PATH: frontend/src/pages/Dealer/dealerrequests.jsx
+.dealerrequests-container {
+  padding: 20px;
+  color: white;
+}
 
-import React, { useEffect, useState } from "react";
-import "../../styles/dealerrequests.css";
+.dealerrequests-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
 
-export default function DealerRequests() {
-  const [requests, setRequests] = useState([]);
+.dealerrequests-subtitle {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
 
-  // Backend connection will be added later
-  useEffect(() => {
-    setRequests([]);
-  }, []);
+.dealerrequests-empty {
+  padding: 20px;
+  background: #222;
+  border-radius: 6px;
+  text-align: center;
+}
 
-  return (
-    <div className="dealerrequests-container">
+.dealerrequests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-      <h1 className="dealerrequests-title">Live Buyer Requests</h1>
-      <p className="dealerrequests-subtitle">
-        These buyers are looking for vehicles within your radius.
-      </p>
+.dealerrequests-card {
+  padding: 20px;
+  background: #1d1d1d;
+  border-radius: 8px;
+}
 
-      {/* EMPTY STATE */}
-      {requests.length === 0 && (
-        <div className="dealerrequests-empty">
-          No buyer requests available.
-        </div>
-      )}
+.dealerrequests-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
 
-      {/* LIST */}
-      <div className="dealerrequests-list">
-        {requests.map((req) => (
-          <div key={req.id} className="dealerrequests-card">
+.dealerrequests-label {
+  font-weight: bold;
+}
 
-            <div className="dealerrequests-row">
-              <span className="dealerrequests-label">Vehicle</span>
-              <span className="dealerrequests-value">
-                {req.year} {req.make} {req.model} {req.trim}
-              </span>
-            </div>
+.dealerrequests-value {
+  opacity: 0.9;
+}
 
-            <div className="dealerrequests-row">
-              <span className="dealerrequests-label">ZIP</span>
-              <span className="dealerrequests-value">{req.zip}</span>
-            </div>
-
-            <div className="dealerrequests-row">
-              <span className="dealerrequests-label">Radius</span>
-              <span className="dealerrequests-value">{req.radius} miles</span>
-            </div>
-
-            <div className="dealerrequests-row">
-              <span className="dealerrequests-label">Requirements</span>
-              <span className="dealerrequests-value">
-                {req.requirements || "None"}
-              </span>
-            </div>
-
-            <button
-              className="dealerrequests-bidbtn"
-              onClick={() => (window.location.href = `/dealer/bid/${req.id}`)}
-            >
-              Place Bid
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+.dealerrequests-bidbtn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #4caf50;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
